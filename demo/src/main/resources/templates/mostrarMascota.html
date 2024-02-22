@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300&display=swap" rel="stylesheet">
+    <link rel="icon" href="/img/logo_basico_fondo.png" type="img/logo_basico">
+    <link rel="stylesheet" href="/css/mostrarMascota.css" />
+    <title>Bienvenido a DOGTOR</title>
+</head>
+<body>
+    <header>
+        <img src="/img/logo_basico_blanco.png" alt="">
+        <h1 th:text="${mascota.getNombre()}"></h1>
+    </header>
+
+    <h2 class="titulo">Info del Paciente</h2>
+    <section class="datos-paciente">
+        
+        <table class="tabla-info">
+            <tr>
+                <td class="titulo-tabla">Edad</td>
+                <td th:text="${mascota.getEdad()}" class="contenido-tabla"></td>
+            </tr>
+            <tr>
+                <td class="titulo-tabla">Raza</td>
+                <td th:text="${mascota.getRaza()}" class="contenido-tabla"></td>
+            </tr>
+            <tr>
+                <td class="titulo-tabla">Peso</td>
+                <td th:text="${mascota.getPeso()}" class="contenido-tabla"></td>
+            </tr>
+            <tr>
+                <td class="titulo-tabla">Enfermedad</td>
+                <td th:text="${mascota.getEnfermedad()}" class="contenido-tabla"></td>
+            </tr>
+        </table>
+
+        <img src="/img/sarita.jpg" alt="">
+    </section>
+
+
+    <section class="tratamientos">
+        <table>
+            <thead class="super-titulo-tabla">
+                <h1>TRATAMIENTOS</h1>
+            </thead>
+            <th class="titulo-tabla">FEHCA</th>
+            <th class="titulo-tabla">TRATAMIENTO</th>
+
+            <tr>
+                <td class="contenido-tabla">1/1/24</td>
+                <td class="contenido-tabla">Keppra 5mg</td>
+            </tr>
+            <tr>
+                <td class="contenido-tabla">2/2/24</td>
+                <td class="contenido-tabla">Keppra 2mg</td>
+            </tr>
+        </table>
+
+    </section>
+    
+</body>
+</html>

@@ -1,0 +1,125 @@
+:root {
+    --color-primario: #ecf8f9;
+    --color-secundario: #068da9;
+    --color-terciario: #7e1717;
+    --color-contraste: #e55807;
+    --font-dosis: 'Dosis', sans-serif;
+}
+
+body {
+    box-sizing: border-box;
+    background-color: var(--color-primario);
+    font-family: var(--font-dosis);
+    max-width: 100%;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    background-color: #ffffff;
+    margin: 6rem 0rem 0 0rem;
+    padding: 0;
+
+}
+
+header {
+    display: flex;
+    align-items: center;
+    background-color: var(--color-secundario);
+    color: white;
+    position: fixed;
+    width: 100%;
+    height: 6rem;
+    top: 0;
+    padding: 0 3rem .5rem 3rem;
+    
+}
+
+header h1{
+    margin: 0;
+    color: white;
+    text-transform: uppercase;
+    margin: 1rem 0 1rem 1rem;
+}
+
+header img {
+    width: 4rem;
+}
+
+h2{
+    max-width: 100%;
+    font-size: 40px;
+    padding: 1.5rem 0 0rem 3rem;
+    color: var(--color-contraste);
+    margin: 0;
+}
+
+.datos-paciente {
+    margin: 0 3rem 0 3rem;
+    display: flex;
+    align-items: space-between;
+    max-width:  100%;
+
+}
+
+.datos-paciente h1 {
+    color: var(--color-contraste);
+    font-size: 40px;
+}
+
+.datos-paciente img {
+    margin: 0 0 0 15rem;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+}
+
+.tabla-info {
+    margin: 0;
+    width: 50%;
+    border-radius: .7rem;
+    overflow: hidden;
+}
+
+.titulo-tabla {
+    font-weight: bold;
+    background-color: var(--color-contraste);
+    color: white;
+    text-align: center;
+    padding: .5rem;
+    font-size: 24px;
+}
+
+.contenido-tabla {
+    text-align: center;
+    background-color: #C1FAFF;
+    color: var(--color-secundario);
+    font-weight: bold;
+    padding: .5rem;
+    font-size: 24px;
+}
+
+
+.tratamientos {
+    width: 93%;
+    margin: 2rem 3rem 0 3rem;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.tratamientos table {
+    width: 100%;
+}
+
+.tratamientos h1 {
+    color: white;
+    font-size: 40px;
+    margin: 0 0 0 0;
+    text-align: center;
+    background-color: var(--color-contraste);
+    width: 100%;
+    border-radius: .5rem;
+}
+
+.tratamientos .titulo-tabla {
+    background-color: var(--color-secundario);
+}
+

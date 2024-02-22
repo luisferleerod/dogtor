@@ -6,6 +6,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
+import com.example.demo.entidad.User;
+
 @Configuration //desarrollo beans
 @EnableAutoConfiguration //activar autoconfig
 @ComponentScan
@@ -16,8 +18,8 @@ public class DemoApplication {
 	}
 
 	@Bean
-	public com.example.demo.entidad.User user() {
-		return new com.example.demo.entidad.User("juan", 
+	public User user() {
+		return new User("juan", 
 		"123456", 
 		"cirujano",
 		1);
