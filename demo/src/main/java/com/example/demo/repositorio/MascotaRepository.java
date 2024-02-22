@@ -13,9 +13,14 @@ public class MascotaRepository {
         data_mascota.put(1, new Mascota("Sarita", "Pitbull", 14, 8.0, "Enfermedad", "https://cdn.pixabay.com/photo/2023/10/17/05/25/fox-squirrel-8320423_1280.jpg", "Activo"));
         data_mascota.put(2, new Mascota("Max", "Rottweiler", 8, 50.0, "Enfermedad", "url", "Activo"));
         data_mascota.put(3, new Mascota("Kira", "Criolla", 4, 20.0, "Epilepsia", "url", "Activo"));
-        data_mascota.put(4, new Mascota("Pepito", "Golden", 4, 16.0, "Enfermedad", "url", "Activo"));
+        data_mascota.put(4, new Mascota("Pepito", "Golden", 5, 16.0, "Enfermedad", "url", "Activo"));
         data_mascota.put(5, new Mascota("Dash", "Shitsu", 12, 5.0, "Enfermedad", "url", "Activo"));
         data_mascota.put(6, new Mascota("SapoPerro", "Labrador", 2, 30.0, "Enfermedad", "url", "Activo"));
+        data_mascota.put(7, new Mascota("Juanito", "Rottweiler", 8, 50.0, "Enfermedad", "url", "Activo"));
+        data_mascota.put(8, new Mascota("Pepe", "Criolla", 4, 20.0, "Epilepsia", "url", "Activo"));
+        data_mascota.put(9, new Mascota("Carlos", "Golden", 4, 16.0, "Enfermedad", "url", "Activo"));
+        data_mascota.put(10, new Mascota("Andres", "Shitsu", 13, 5.0, "Enfermedad", "url", "Activo"));
+        data_mascota.put(11, new Mascota("Blue", "Labrador", 1, 26.0, "Enfermedad", "url", "Activo"));
     }
 
     //Buscar por ID
