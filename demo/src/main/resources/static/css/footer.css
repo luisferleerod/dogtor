@@ -1,0 +1,52 @@
+:root {
+    --color-primario: #ecf8f9;
+    --color-secundario: #068da9;
+    --color-terciario: #7e1717;
+    --color-contraste: #e55807;
+    --font-dosis: 'Dosis', sans-serif;
+}
+
+footer {
+    display: flex;
+    background-color: var(--color-secundario);
+    padding: 0rem 3rem 0rem 3rem;
+    color: white;
+    text-align: justify;
+    font-size: 20px;
+    max-width: 100%;
+}
+
+.datos{
+    text-align: justify;
+    margin-right: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+}
+
+.derechos{
+    width: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.redes-sociales {
+    margin: 2rem 0 2rem 2rem;
+    display: flex;
+    justify-content: center;
+    width: 30%;
+}
+
+.redes-sociales img {
+    width: 4rem;
+    height: 4rem;
+    margin: 1rem;
+}
+
+.redes-sociales img:hover{
+    transform: scale(1.2);
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
+}
