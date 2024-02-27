@@ -1,0 +1,19 @@
+:root {
+    --color-primario: #ecf8f9;
+    --color-secundario: #068da9;
+    --color-terciario: #7e1717;
+    --color-contraste: #e55807;
+    --font-dosis: 'Dosis', sans-serif;
+}
+
+body {
+    box-sizing: border-box;
+    background-image: url(/img/fondo-login.jpg);
+    font-family: var(--font-dosis);
+    max-width: 100%;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    margin: 6rem 0rem 0rem 0rem;
+    padding: 0;
+
+}

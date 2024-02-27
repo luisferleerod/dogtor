@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
 
 
 
@@ -22,6 +24,34 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class DuenoController {
     @Autowired
     DuenoService duenoService;
+
+
+    @GetMapping("/inicioSesion")
+    public String mostrarFormularioInicioSesion(Model model) {
+        Dueno dueno = new Dueno( "", "", "", "");  // Puedes inicializar un objeto Dueno si es necesario
+        model.addAttribute("dueno", dueno);
+        return "inicioSesion";
+    }
+
+
+    @PostMapping("/inicioSesion")
+    public String iniciarSesion(@ModelAttribute("dueno") Dueno dueno, Model model) {
+        Dueno duenoEncontrado = duenoService.inicioSesionDueno(dueno.getCedula());
+
+        if (duenoEncontrado != null) {
+            // Agregar el objeto Dueno al modelo
+            model.addAttribute("dueno", duenoEncontrado);
+            // Redirigir a una página que muestre los detalles del usuario
+            return "mostrarDueno";
+        } else {
+            
+            model.addAttribute("error", "Cédula incorrecta");
+            return "inicioSesion";
+        }
+    }
+
+
+    
 
     @GetMapping("/all")
     public String MostrarDuenos(Model model) {
@@ -85,4 +115,5 @@ public class DuenoController {
 
         return "redirect:/dueno/all";
     }
+
 }
