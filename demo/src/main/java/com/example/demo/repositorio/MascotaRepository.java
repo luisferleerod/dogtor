@@ -32,4 +32,22 @@ public class MascotaRepository {
     public Collection<Mascota> findAll() {
         return data_mascota.values();
     }
+
+    //Metodos CRUD
+
+    public void deleteById(int id) {
+        data_mascota.remove(id);
+    }
+
+    public void update(Mascota mascota) {
+        data_mascota.put(mascota.getId(), mascota);
+    }
+
+    public void add(Mascota mascota) {
+        int tam = data_mascota.size();
+        int lastId = data_mascota.get(tam).getId();
+
+        mascota.setId(lastId + 1);
+        data_mascota.put(mascota.getId(), mascota);
+    }
 }

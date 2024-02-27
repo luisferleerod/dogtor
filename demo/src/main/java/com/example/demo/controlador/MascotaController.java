@@ -4,9 +4,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.example.demo.entidad.Mascota;
 import com.example.demo.servicio.MascotaService;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
 
 
 @RequestMapping("/mascotas")
@@ -29,4 +34,20 @@ public class MascotaController {
         return "mostrarMascota";
     }
 
+    // http://localhost:8090/mascotas/add
+    @GetMapping("/add")
+    public String mostrarFormularioCrear(Model model) {
+        
+        Mascota mascota = new Mascota(0, "", "", 0, 0.0, "", "", "");
+        model.addAttribute("mascota", mascota);
+        return "crearMascota";
+    }
+
+    @PostMapping("/agregar")
+    public String agregarMascota(@ModelAttribute("mascota") Mascota mascota) {
+        mascotaService.add(mascota);
+
+        return "redirect:/mascotas/all";
+    }
+    
 }

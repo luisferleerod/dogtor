@@ -7,5 +7,12 @@ public interface MascotaService {
     public Mascota findById(int id);
 
     public Collection<Mascota> findAll();
+
+    public void deleteById(int id);
+
+    public void update(Mascota mascota);
+
+    public void add(Mascota mascota);
+
     
 }
