@@ -2,6 +2,7 @@ package com.example.demo.entidad;
 
 //POJO (Plain Old Java Object)
 public class Mascota {
+    private int id;
     private String nombre;
     private String raza;
     private int edad;
@@ -10,7 +11,8 @@ public class Mascota {
     private String foto;
     private String estado;
 
-    public Mascota(String nombre, String raza, int edad, Double peso, String enfermedad, String foto, String estado) {
+    public Mascota(int id, String nombre, String raza, int edad, Double peso, String enfermedad, String foto, String estado) {
+        this.id = id;
         this.nombre = nombre;
         this.raza = raza;
         this.edad = edad;
@@ -18,6 +20,14 @@ public class Mascota {
         this.enfermedad = enfermedad;
         this.foto = foto;
         this.estado = estado;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNombre() {

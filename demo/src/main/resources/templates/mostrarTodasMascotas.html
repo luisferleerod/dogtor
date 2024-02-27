@@ -34,7 +34,9 @@
             <tbody>
                 <tr th:each="mascota, iterStat : ${mascotas}" 
                     th:class="${iterStat.odd} ? 'odd-row' : 'even-row'">
-                    <td th:text="${mascota.getNombre()}"></td>
+                    <td >
+                        <a th:href="@{/mascotas/find/{id}(id=${mascota.getId()})}" th:text="${mascota.getNombre()}"> </a> 
+                    </td>
                     <td th:text="${mascota.getRaza()}"></td>
                     <td th:text="${mascota.getEdad()}"></td>
                     <td th:text="${mascota.getPeso()}"></td>
