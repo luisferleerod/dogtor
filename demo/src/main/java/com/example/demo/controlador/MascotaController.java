@@ -51,4 +51,24 @@ public class MascotaController {
         return "redirect:/mascotas/all";
     }
     
+    @GetMapping("/delete/{id}")
+    public String borrarMascota(@PathVariable("id") int id) {
+        mascotaService.deleteById(id);
+
+        return "redirect:/mascotas/all";
+    }
+
+    @GetMapping("/update/{id}")
+    public String mostrarFormularioUpdate(@PathVariable("id") int id, Model model) {
+        model.addAttribute("mascota", mascotaService.findById(id));
+        return "actualizarMascota";
+    }
+
+    @PostMapping("/update/{id}")
+    public String actualizarMascota(@ModelAttribute("mascota") Mascota mascota) {
+        
+        mascotaService.update(mascota);
+
+        return "redirect:/mascotas/all";
+    }
 }

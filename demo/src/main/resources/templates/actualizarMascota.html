@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crear Mascota</title>
+    <title>Actualizar Mascota</title>
 </head>
 <body>
-    
-    <form th:object="${mascota}" th:action="@{/mascotas/agregar}" method="post">
+    <form th:object="${mascota}" th:action="@{/mascotas/update/{id}(id=${mascota.getId()})}" method="post">
 
         <label for="nombre">Nombre</label>
         <input th:field="*{nombre}" type="text" name="nombre" id="nombre">
@@ -37,7 +36,6 @@
 
 
     </form>
-
     
 </body>
 </html>
