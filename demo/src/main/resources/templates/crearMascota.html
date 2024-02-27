@@ -12,6 +12,9 @@
         <label for="nombre">Nombre</label>
         <input th:field="*{nombre}" type="text" name="nombre" id="nombre">
 
+         <label for="id" hidden>ID</label>  <!-- Campo necesario para que redirija, no se muestra en el formulario-->
+        <input th:field="*{id}" type="hidden" name="id" id="id">
+
         <label for="raza">Raza</label>
         <input th:field="*{raza}" type="text" name="raza" id="raza">
 

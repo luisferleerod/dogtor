@@ -47,6 +47,7 @@ public class MascotaController {
     public String agregarMascota(@ModelAttribute("mascota") Mascota mascota) {
         mascotaService.add(mascota);
 
+        
         return "redirect:/mascotas/all";
     }
     
