@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300&display=swap" rel="stylesheet">
+    <link rel="icon" href="/img/logo_basico_fondo.png" type="img/logo_basico">
+    <link rel="stylesheet" href="/css/mostrarTodasMascotas.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+    <title>Bienvenido a DOGTOR</title>
+</head>
+<body>
+    <header class="logo-horizontal">
+        <img src="/img/logo_horizontal.png" alt="">
+    </header>
+
+    <h1>Todos los dueños</h1>
+
+    <div>
+        <table class="tabla">
+            <thead>
+                <tr>
+                    <th>Cedula</th>
+                    <th>Nombre</th>
+                    <th>Correo</th>
+                    <th>Celular</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="dueno, iterStat : ${duenos}" 
+                    th:class="${iterStat.odd} ? 'odd-row' : 'even-row'" >
+                    <td >
+                        <a th:href="@{/dueno/find/{cedula}(cedula=${dueno.getCedula()})}" th:text="${dueno.getCedula()}"> </a> 
+                    </td>
+                    <td th:text="${dueno.getNombre()}"></td>
+                    <td th:text="${dueno.getCorreo()}"></td>
+                    <td th:text="${dueno.getCelular()}"></td>
+
+                    <td>
+                        <a th:href="@{/dueno/update/{id}(id=${dueno.getCedula()})}">Editar</a>
+                        <a th:href="@{/dueno/delete/{id}(id=${dueno.getCedula()})}">Eliminar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <a type="button" th:href="@{/dueno/add}"> Agregar Dueño</a>
+    <footer>
+        <div class="datos">
+            <p>
+                Numero: +57 000 000 0000<br>
+                Email: consultor@dogtor.com<br>
+                Direccion: Calle 1 # 1-1<br>
+                Horario de atenciòn: 9:00 - 18:00
+            </p>
+        </div>
+        
+        <div class="derechos">
+            © 2024 DOGTOR. Todos los derechos reservados.
+        </div>
+
+        <div class="redes-sociales">
+            <img src="/img/facebook.png" alt="facebook">
+            <img src="/img/instagram.png" alt="instagram">
+            <img src="/img/whatsapp.png" alt="whatsapp">
+        </div>
+
+        
+        
+    </footer>
+    
+</body>
+</html>
