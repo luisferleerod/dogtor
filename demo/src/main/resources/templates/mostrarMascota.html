@@ -17,47 +17,51 @@
         <h1 th:text="${mascota.getNombre()}"></h1>
     </header>
 
-    <h2 class="titulo">Info del Paciente</h2>
-    <section class="datos-paciente">
-        
-        <table class="tabla-info">
-            <tr>
-                <td class="titulo-tabla">Edad</td>
-                <td th:text="${mascota.getEdad()}" class="contenido-tabla"></td>
-            </tr>
-            <tr>
-                <td class="titulo-tabla">Raza</td>
-                <td th:text="${mascota.getRaza()}" class="contenido-tabla"></td>
-            </tr>
-            <tr>
-                <td class="titulo-tabla">Peso</td>
-                <td th:text="${mascota.getPeso()}" class="contenido-tabla"></td>
-            </tr>
-            <tr>
-                <td class="titulo-tabla">Enfermedad</td>
-                <td th:text="${mascota.getEnfermedad()}" class="contenido-tabla"></td>
-            </tr>
-        </table>
+    
+    <section class="datos-paciente-imagen">
+            
+        <div class="datos-paciente" >
+            <h1 class="titulo">Info del Paciente</h1>
+            <table class="tabla-info">
+                <tr>
+                    <td class="titulo-tabla borer-radius1">Edad</td>
+                    <td th:text="${mascota.getEdad()}" class="contenido-tabla borer-radius2"></td>
+                </tr>
+                <tr>
+                    <td class="titulo-tabla">Raza</td>
+                    <td th:text="${mascota.getRaza()}" class="contenido-tabla"></td>
+                </tr>
+                <tr>
+                    <td class="titulo-tabla">Peso</td>
+                    <td th:text="${mascota.getPeso()}" class="contenido-tabla"></td>
+                </tr>
+                <tr>
+                    <td class="titulo-tabla borer-radius4">Enfermedad</td>
+                    <td th:text="${mascota.getEnfermedad()}" class="contenido-tabla borer-radius3"></td>
+                </tr>
+            </table>
+        </div>
 
-        <img src="/img/sarita.jpg" alt="">
+        <div class="datos-imagen">
+            <img src="/img/mascota_especifico.jpg" class="imagen-perro">
+        </div>
+        
     </section>
 
 
     <section class="tratamientos">
+            <h1>TRATAMIENTOS</h1>
         <table>
-            <thead class="super-titulo-tabla">
-                <h1>TRATAMIENTOS</h1>
-            </thead>
-            <th class="titulo-tabla">FEHCA</th>
-            <th class="titulo-tabla">TRATAMIENTO</th>
+            <th class="titulo-tabla-tratamientos borer-radius1">FECHA</th>
+            <th class="titulo-tabla-tratamientos borer-radius2">DROGA</th>
 
             <tr>
                 <td class="contenido-tabla">1/1/24</td>
                 <td class="contenido-tabla">Keppra 5mg</td>
             </tr>
             <tr>
-                <td class="contenido-tabla">2/2/24</td>
-                <td class="contenido-tabla">Keppra 2mg</td>
+                <td class="contenido-tabla borer-radius4">2/2/24</td>
+                <td class="contenido-tabla borer-radius3">Keppra 2mg</td>
             </tr>
         </table>
 

@@ -17,4 +17,6 @@ public interface DuenoService {
     public void update(Dueno dueno);
 
     public void add(Dueno dueno);
+
+    public Dueno inicioSesionDueno(String cedula);
 }

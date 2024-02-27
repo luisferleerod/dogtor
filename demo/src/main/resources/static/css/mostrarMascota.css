@@ -46,54 +46,97 @@ header img {
 h2{
     max-width: 100%;
     font-size: 40px;
-    padding: 1.5rem 0 0rem 3rem;
+    padding: 1.5rem 0 0rem 0rem;
     color: var(--color-contraste);
     margin: 0;
+}
+
+.datos-paciente-imagen {
+    display: flex;
+    max-width: 100%;
 }
 
 .datos-paciente {
     margin: 0 3rem 0 3rem;
-    display: flex;
-    align-items: space-between;
+    display: block;
+    align-items: center;
     max-width:  100%;
 
 }
 
-.datos-paciente h1 {
-    color: var(--color-contraste);
-    font-size: 40px;
-}
-
-.datos-paciente img {
-    margin: 0 0 0 15rem;
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-}
-
-.tabla-info {
-    margin: 0;
+.datos-imagen {
     width: 50%;
+    height: auto;
+}
+
+.imagen-perro {
+    width: 450px;
+    margin: 2rem 0 0 4rem;
+    border-radius: 5%;
+    box-shadow: 5px 5px 10px rgba(0.5, 0.5, 0.5, 0.5);
+}
+
+table {
     border-radius: .7rem;
+    width: 100%;
     overflow: hidden;
+    background-color: #035A6C;
+    color: white;
+}
+
+.borer-radius1 {
+    border-radius: .6rem 0 0 0;
+}
+
+.borer-radius2 {
+    border-radius: 0 .6rem 0 0;
+}
+
+.borer-radius3 {
+    border-radius: 0 0 .6rem 0;
+}
+
+.borer-radius4 {
+    border-radius: 0 0 0 .6rem;
 }
 
 .titulo-tabla {
     font-weight: bold;
-    background-color: var(--color-contraste);
-    color: white;
+    background-color: #9EF0F7;
+    color: rgb(0, 0, 0);
     text-align: center;
+    padding: 0rem;
+    font-size: 18px;
+}
+
+.titulo-tabla-tratamientos {
+    color: black;
+    background-color: #9EF0F7;
     padding: .5rem;
-    font-size: 24px;
+}
+
+.datos-paciente td{
+    padding: 1rem 6rem 1rem 6rem;
+    margin: 0;
+}
+
+.titulo{
+    color: white;
+    padding: .3rem 3rem .3rem 3rem;
+    background-color: #1B9AB5;
+    margin: 3rem 0 .3rem 0;
+    text-align: center;
+    border-radius: .7rem;
+    text-transform: uppercase;
 }
 
 .contenido-tabla {
     text-align: center;
-    background-color: #C1FAFF;
-    color: var(--color-secundario);
+    background-color: #D5FCFF;
+    color: black;
     font-weight: bold;
-    padding: .5rem;
-    font-size: 24px;
+    padding: .6rem;
+    font-size: 18px;
 }
 
 
@@ -111,12 +154,13 @@ h2{
 
 .tratamientos h1 {
     color: white;
-    font-size: 40px;
-    margin: 0 0 0 0;
+    font-size: 30px;
+    margin: 0 0 .3rem 0rem;
     text-align: center;
-    background-color: var(--color-contraste);
+    background-color: #1B9AB5;
     width: 100%;
     border-radius: .5rem;
+
 }
 
 .tratamientos .titulo-tabla {
@@ -169,4 +213,3 @@ footer {
     transition: transform 0.2s ease-in-out;
     cursor: pointer;
 }
-

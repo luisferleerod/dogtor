@@ -19,6 +19,10 @@ public class DuenoServiceImpl implements DuenoService{
         return duenoRepository.findByCedula(cedula);
     }
 
+    @Override
+    public Dueno inicioSesionDueno(String cedula){
+        return duenoRepository.inicioSesionDueno(cedula);
+    }
 
     @Override
     public void deleteByCedula(String cedula) {

@@ -24,6 +24,16 @@ public class DuenoRepository {
         return data_dueno.get(cedula);
     }
 
+    public Dueno inicioSesionDueno(String cedula){
+        for (Dueno a : data_dueno.values()){
+            if (a.getCedula().equals(cedula)){
+                return a;
+            }
+            
+        }
+        return null;
+    }
+
     //Listar todas las mascotas
     public Collection<Dueno> findAll() {
         return data_dueno.values();
