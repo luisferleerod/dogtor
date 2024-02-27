@@ -10,8 +10,9 @@ public class Mascota {
     private String enfermedad;
     private String foto;
     private String estado;
+    private Dueno dueno;
 
-    public Mascota(int id, String nombre, String raza, int edad, Double peso, String enfermedad, String foto, String estado) {
+    public Mascota(int id, String nombre, String raza, int edad, Double peso, String enfermedad, String foto, String estado, Dueno dueno) {
         this.id = id;
         this.nombre = nombre;
         this.raza = raza;
@@ -20,7 +21,10 @@ public class Mascota {
         this.enfermedad = enfermedad;
         this.foto = foto;
         this.estado = estado;
+        this.dueno = dueno;
     }
+
+    
 
     public Integer getId() {
         return id;
@@ -84,6 +88,18 @@ public class Mascota {
 
     public void setEstado(String estado) {
         this.estado = estado;
+    }
+
+
+
+    public Dueno getDueno() {
+        return dueno;
+    }
+
+
+
+    public void setDueno(Dueno dueno) {
+        this.dueno = dueno;
     }
 
 }
