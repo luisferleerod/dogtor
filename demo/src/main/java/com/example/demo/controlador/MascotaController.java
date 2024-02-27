@@ -30,6 +30,14 @@ public class MascotaController {
     // http://localhost:8090/mascotas/find/1
     @GetMapping("/find/{id}")
     public String MostrarInfoMascota(Model model, @PathVariable("id") int id) {
+        Mascota mascota = mascotaService.findById(id);
+        if(mascota != null) {
+            model.addAttribute("mascota", mascota);
+        }
+        else{
+            throw new notFoundException(id);
+        }
+
         model.addAttribute("mascota", mascotaService.findById(id));
         return "mostrarMascota";
     }
