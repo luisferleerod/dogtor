@@ -16,13 +16,21 @@
         <img src="/img/logo_horizontal.png" alt="">
     </header>
 
-    <h1>Todas las Mascotas</h1>
-
+    <div class="titulo-mascotas">
+        <div class="titulo-todas-las-mascotas">
+            <h1 class="titulo">Todas las Mascotas</h1>
+        </div>
+        <div class="mas">
+            <a type="button" th:href="@{/mascotas/add}"><img src="/img/mas.png" alt=""></a>
+        </div>
+        
+    </div>
+    
     <div>
         <table class="tabla">
             <thead>
                 <tr>
-                    <th>Nombre</th>
+                    <th class="border-radius1">Nombre</th>
                     <th>Raza</th>
                     <th>Edad</th>
                     <th>Peso</th>
@@ -45,16 +53,15 @@
                     <td th:text="${mascota.getFoto()}"></td>
                     <td th:text="${mascota.getEstado()}"></td>
 
-                    <td>
-                        <a th:href="@{/mascotas/update/{id}(id=${mascota.getId()})}">Editar</a>
-                        <a th:href="@{/mascotas/delete/{id}(id=${mascota.getId()})}">Eliminar</a>
+                    <td class="td-botones">
+                        <a class="boton" th:href="@{/mascotas/update/{id}(id=${mascota.getId()})}">Editar</a>
+                        <a class="boton" th:href="@{/mascotas/delete/{id}(id=${mascota.getId()})}">Eliminar</a>
                     </td>
                 </tr>
             </tbody>
         </table>
     </div>
 
-    <a type="button" th:href="@{/mascotas/add}"> Agregar Mascota</a>
     <footer>
         <div class="datos">
             <p>
@@ -75,8 +82,7 @@
             <img src="/img/whatsapp.png" alt="whatsapp">
         </div>
 
-        
-        
+    
     </footer>
     
 </body>

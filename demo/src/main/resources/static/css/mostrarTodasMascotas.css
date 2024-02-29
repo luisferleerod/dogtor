@@ -33,39 +33,102 @@ header {
     width: 20rem;
 }
 
-
-h1 {
-    color: var(--color-secundario);
-    font-size: 35px;
+.titulo-mascotas {
+    display: flex;
+    justify-content: center;
+    color: white;
+    padding: .3rem .3rem .3rem .3rem;
+    background-color: #1B9AB5;
+    margin: 1rem 10% 0rem 10%;
     text-align: center;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    border-radius: .7rem;
     text-transform: uppercase;
+    width: 79%;
+
+}
+
+.titulo-todas-las-mascotas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    width: 90%;
+    margin-left: 1rem;
+}
+
+.mas {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo-mascotas img {
+    background-color: white;
+    border-radius: 50%;
+    width: 4rem;
+    height: 4rem;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+}
+
+.td-botones {
+    display: flex;
+    justify-content: justify;
+}
+
+.borer-radius1 {
+    border-radius: .6rem 0 0 0;
+}
+
+.borer-radius2 {
+    border-radius: 0 .6rem 0 0;
+}
+
+.borer-radius3 {
+    border-radius: 0 0 .6rem 0;
+}
+
+.borer-radius4 {
+    border-radius: 0 0 0 .6rem;
 }
 
 .tabla {
     width: 80%;
-    margin: 1rem 10% 1rem 10%;
-    border-radius: .7rem;
+    margin: 1rem 10% 2rem 10%;
+    border-radius: .1rem;
     overflow: hidden;
+    background-color: #035A6C;
 }
 
 thead {
-    background-color: var(--color-contraste);
-    color: white;
+    background-color: #9EF0F7;
+    color: black;
     padding: 1rem;
 }
 
-
-.even-row {
-    background-color: #ECF8F9;
+th {
+    padding: 1.2rem;
+    font-size: 20px;
 }
 
-.odd-row {
-    background-color: #9DEEFF;
-}
-
-th, td {
+td {
     padding: .7rem;
     font-size: 20px;
+    background-color: #D5FCFF;
+}
+
+.boton {
+    width: 100%;
+    padding: .3rem .3rem .3rem .3rem;
+    border: none;
+    background-color: var(--color-secundario);
+    color: white;
+    border-radius: .3rem;
+    cursor: pointer;
+    text-align: center;
+    margin-right: .5rem;
 }

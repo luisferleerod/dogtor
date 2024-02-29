@@ -136,14 +136,40 @@ table {
     background-color: #D5FCFF;
     color: black;
     font-weight: bold;
-    padding: .6rem;
+    padding: 1rem;
     font-size: 18px;
+    
+}
+
+a { 
+    text-decoration: none;
+    color: black;
+}
+
+.boton-tabla {
+    text-align: center;
+    width: 70%;
+    background-color: #D5FCFF;
+    color: black;
+    font-weight: bold;
+    font-style: none;
+}
+
+.boton-tabla:hover {
+    transition: .2s;
+    background-color: #9EF0F7;
+    color: black;
+    border: none;
+    cursor: pointer;
+    padding: 1rem 0 1rem 0;
+    margin: 0;
+
 }
 
 
 .tratamientos {
     width: 93%;
-    margin: 2rem 3rem 0 3rem;
+    margin: 2rem 3rem  3rem;
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -162,10 +188,6 @@ table {
     width: 100%;
     border-radius: .5rem;
 
-}
-
-.tratamientos .titulo-tabla {
-    background-color: var(--color-secundario);
 }
 
 footer {
@@ -214,3 +236,4 @@ footer {
     transition: transform 0.2s ease-in-out;
     cursor: pointer;
 }
+
