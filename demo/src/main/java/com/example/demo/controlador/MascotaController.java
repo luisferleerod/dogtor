@@ -5,6 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.demo.entidad.Mascota;
+import com.example.demo.errorHandling.notFoundException;
 import com.example.demo.servicio.MascotaService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -29,7 +30,7 @@ public class MascotaController {
 
     // http://localhost:8090/mascotas/find/1
     @GetMapping("/find/{id}")
-    public String MostrarInfoMascota(Model model, @PathVariable("id") int id) {
+    public String MostrarInfoMascota(Model model, @PathVariable("id") Long id) {
         Mascota mascota = mascotaService.findById(id);
         if(mascota != null) {
             model.addAttribute("mascota", mascota);
@@ -46,7 +47,7 @@ public class MascotaController {
     @GetMapping("/add")
     public String mostrarFormularioCrear(Model model) {
         
-        Mascota mascota = new Mascota(0, "", "", 0, 0.0, "", "", "",null );
+        Mascota mascota = new Mascota(null, null, null, 0, null, null, null, null);
         model.addAttribute("mascota", mascota);
         return "crearMascota";
     }
@@ -60,14 +61,14 @@ public class MascotaController {
     }
     
     @GetMapping("/delete/{id}")
-    public String borrarMascota(@PathVariable("id") int id) {
+    public String borrarMascota(@PathVariable("id") Long id) {
         mascotaService.deleteById(id);
 
         return "redirect:/mascotas/all";
     }
 
     @GetMapping("/update/{id}")
-    public String mostrarFormularioUpdate(@PathVariable("id") int id, Model model) {
+    public String mostrarFormularioUpdate(@PathVariable("id") Long id, Model model) {
         model.addAttribute("mascota", mascotaService.findById(id));
         return "actualizarMascota";
     }

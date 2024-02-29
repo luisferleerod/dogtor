@@ -1,10 +1,37 @@
 package com.example.demo.entidad;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+
+@Entity
 public class Dueno {
     private String cedula;
     private String nombre;
     private String correo;
     private String celular;
+
+    @Id
+    @GeneratedValue
+    private Long id;
+
+
+    @OneToMany(mappedBy = "dueno")
+    private List<Mascota> mascotas = new ArrayList<>();
+
+    public Dueno(Long id,String cedula, String nombre, String correo, String celular) {
+        this.id = id;
+        this.cedula = cedula;
+        this.nombre = nombre;
+        this.correo = correo;
+        this.celular = celular;
+        // this.mascotas = mascotas;
+
+    }
     
     public Dueno(String cedula, String nombre, String correo, String celular) {
         this.cedula = cedula;
@@ -12,6 +39,10 @@ public class Dueno {
         this.correo = correo;
         this.celular = celular;
 
+    }
+
+    public Dueno() {
+        
     }
 
     public String getCedula() {
@@ -46,4 +77,19 @@ public class Dueno {
         this.celular = celular;
     }
 
+    public List<Mascota> getMascotas() {
+        return mascotas;
+    }
+
+    public void setMascotas(List<Mascota> mascotas) {
+        this.mascotas = mascotas;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 }

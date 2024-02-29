@@ -1,8 +1,10 @@
-package com.example.demo.controlador;
+package com.example.demo.errorHandling;
 
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+
+import com.example.demo.errorHandling.notFoundException;
 
 @ControllerAdvice
 public class ErrorController {

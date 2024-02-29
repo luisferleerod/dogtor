@@ -6,8 +6,11 @@
     <title>Actualizar Dueno</title>
 </head>
 <body>
-    <form th:object="${dueno}" th:action="@{/dueno/update/{cedula}(cedula=${dueno.getCedula()})}" method="post">
+    <form th:object="${dueno}" th:action="@{/dueno/update/{id}(id=${dueno.getId()})}" method="post">
 
+
+        <label for="cedula">Cedula</label>
+        <input th:field="*{cedula}" type="text" name="cedula" id="cedula">
 
         <label for="nombre">Nombre</label>
         <input th:field="*{nombre}" type="text" name="nombre" id="nombre">

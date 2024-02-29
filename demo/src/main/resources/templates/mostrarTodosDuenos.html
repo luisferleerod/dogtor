@@ -41,8 +41,8 @@
                     <td th:text="${dueno.getCelular()}"></td>
 
                     <td>
-                        <a th:href="@{/dueno/update/{id}(id=${dueno.getCedula()})}">Editar</a>
-                        <a th:href="@{/dueno/delete/{id}(id=${dueno.getCedula()})}">Eliminar</a>
+                        <a th:href="@{/dueno/update/{id}(id=${dueno.getId()})}">Editar</a>
+                        <a th:href="@{/dueno/delete/{id}(id=${dueno.getId()})}">Eliminar</a>
                     </td>
                 </tr>
             </tbody>

@@ -6,7 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.demo.entidad.Dueno;
-
+import com.example.demo.errorHandling.notFoundException;
 import com.example.demo.servicio.DuenoService;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -36,7 +36,7 @@ public class DuenoController {
 
     @PostMapping("/inicioSesion")
     public String iniciarSesion(@ModelAttribute("dueno") Dueno dueno, Model model) {
-        Dueno duenoEncontrado = duenoService.inicioSesionDueno(dueno.getCedula());
+        Dueno duenoEncontrado = duenoService.findByCedula(dueno.getCedula());
 
         if (duenoEncontrado != null) {
             // Agregar el objeto Dueno al modelo
@@ -62,10 +62,10 @@ public class DuenoController {
     @GetMapping("/find/{cedula}")
     public String MostrarInfoDueno(Model model, @PathVariable("cedula") String cedula) {
         
-        //Dueno dueno = duenoService.findByCedula(cedula);
-        // if(dueno != null) {
-        //     model.addAttribute("dueno", dueno);
-        // }
+        Dueno dueno = duenoService.findByCedula(cedula);
+        if(dueno != null) {
+            model.addAttribute("dueno", dueno);
+        }
         // else{
         //     throw new notFoundException(cedula);
         // }
@@ -93,22 +93,22 @@ public class DuenoController {
         return "redirect:/dueno/all";
     }
     
-    @GetMapping("/delete/{cedula}")
-    public String borrarDueno(@PathVariable("cedula") String cedula) {
-        duenoService.deleteByCedula(cedula);
+    @GetMapping("/delete/{id}")
+    public String borrarDueno(@PathVariable("id") Long id) {
+        duenoService.deleteById(id);
 
         return "redirect:/dueno/all";
     }
 
-    @GetMapping("/update/{cedula}")
-    public String mostrarFormularioUpdate(@PathVariable("cedula") String cedula, Model model) {
+    @GetMapping("/update/{id}")
+    public String mostrarFormularioUpdate(@PathVariable("id") Long id, Model model) {
         
-        model.addAttribute("dueno", duenoService.findByCedula(cedula));
+        model.addAttribute("dueno", duenoService.findById(id));
         
         return "actualizarDueno";
     }
 
-    @PostMapping("/update/{cedula}")
+    @PostMapping("/update/{id}")
     public String actualizarDueno(@ModelAttribute("dueno") Dueno dueno) {
         
         duenoService.update(dueno);

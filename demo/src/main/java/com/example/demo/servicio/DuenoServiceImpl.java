@@ -15,18 +15,18 @@ public class DuenoServiceImpl implements DuenoService{
     DuenoRepository duenoRepository;
 
      @Override
-    public Dueno findByCedula(String cedula) {
+    public Dueno findById(Long id) {
+        return duenoRepository.findById(id).get();
+    }
+
+    @Override
+    public Dueno findByCedula(String cedula){
         return duenoRepository.findByCedula(cedula);
     }
 
     @Override
-    public Dueno inicioSesionDueno(String cedula){
-        return duenoRepository.inicioSesionDueno(cedula);
-    }
-
-    @Override
-    public void deleteByCedula(String cedula) {
-        duenoRepository.deleteByCedula(cedula);
+    public void deleteById(Long id) {
+        duenoRepository.deleteById(id);
     }
 
     @Override
@@ -36,11 +36,11 @@ public class DuenoServiceImpl implements DuenoService{
 
     @Override
     public void update(Dueno dueno) {
-        duenoRepository.update(dueno);
+        duenoRepository.save(dueno);
     }
     
     @Override
     public void add(Dueno dueno) {
-        duenoRepository.add(dueno);
+        duenoRepository.save(dueno);
     }
 }

@@ -8,15 +8,17 @@ import com.example.demo.entidad.Dueno;
 public interface DuenoService {
 
     
-    public Dueno findByCedula(String cedula);
+    public Dueno findById(Long id);
 
     public Collection<Dueno> findAll();
 
-    public void deleteByCedula(String cedula);
+    public void deleteById(Long id);
 
     public void update(Dueno dueno);
 
     public void add(Dueno dueno);
 
-    public Dueno inicioSesionDueno(String cedula);
+    public Dueno findByCedula(String cedula);
+
+    
 }

@@ -4,11 +4,11 @@ import java.util.Collection;
 import com.example.demo.entidad.Mascota;
 
 public interface MascotaService {
-    public Mascota findById(int id);
+    public Mascota findById(Long id);
 
     public Collection<Mascota> findAll();
 
-    public void deleteById(int id);
+    public void deleteById(Long id);
 
     public void update(Mascota mascota);
 
