@@ -48,8 +48,9 @@ public class MascotaController {
     public String mostrarFormularioCrear(Model model) {
         
         Mascota mascota = new Mascota(null, null, null, 0, null, null, null, null);
+        mascota.setEstado("Activo");
         model.addAttribute("mascota", mascota);
-        return "crearMascota";
+        return "nuevoPaciente";
     }
 
     @PostMapping("/agregar")

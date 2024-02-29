@@ -80,7 +80,7 @@ public class DuenoController {
 
         Dueno dueno = new Dueno("", "", "", "");
         model.addAttribute("dueno", dueno);
-        return "crearDueno";
+        return "nuevoCliente";
         
 
     }
