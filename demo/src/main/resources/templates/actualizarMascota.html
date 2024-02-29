@@ -16,6 +16,8 @@
             <div class="logo-container">
                 <img src="/img/logo_basico.png" alt="Logo">
             </div>
+
+            <h1>Editar Paciente</h1>
             <form th:object="${mascota}" th:action="@{/mascotas/update/{id}(id=${mascota.getId()})}" method="post">
 
                 <label for="nombre">Nombre</label>
