@@ -6,9 +6,9 @@ body {
     margin: 0;
     background-color: #80CBE9;
     font-family: "Abel", sans-serif;
-    font-size: 16px;
+    font-size: 14px;
 }
-/*Esto es para que el input no muestre las flechas cuando es numerico*/
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -33,16 +33,16 @@ input::-webkit-inner-spin-button {
 
 .contenedor-formulario {
     width: 350px;
-    padding: 30px;
+    padding: 20px; /* Reducir el espaciado interno */
     border: 1px solid #ccc;
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
+    margin-bottom: 10px; /* Reducir el espaciado inferior */
     background-color: #fff;
 }
 
 .logo-container {
-    margin-bottom: 20px;
+    margin-bottom: 10px; /* Reducir el espaciado inferior */
 }
 
 .logo-container img {
@@ -55,8 +55,8 @@ input::-webkit-inner-spin-button {
 
 h1 {
     margin-top: 0;
-    margin-bottom: 20px;
-    font-size: 50px;
+    margin-bottom: 10px; /* Reducir el espaciado inferior */
+    font-size: 40px;
 }
 
 form {
@@ -65,20 +65,21 @@ form {
 }
 
 label {
-    margin-bottom: 8px;
+    margin-bottom: 4px; /* Reducir el espaciado inferior */
     text-align: left;
     width: 100%;
-    font-size: 18px;
+    font-size: 16px;
 }
 
-input {
-    padding: 10px;
-    margin-bottom: 16px;
+input,
+select {
+    padding: 8px; /* Reducir el espaciado interno */
+    margin-bottom: 10px; /* Reducir el espaciado inferior */
     color: #818181;
     background-color: #9DEEFF;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 button {
@@ -88,7 +89,7 @@ button {
     border: none;
     border-radius: 25px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 button:hover {
