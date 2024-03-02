@@ -4,8 +4,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.example.demo.entidad.Dueno;
 import com.example.demo.entidad.Mascota;
 import com.example.demo.errorHandling.notFoundException;
+
+import com.example.demo.servicio.DuenoService;
 import com.example.demo.servicio.MascotaService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -20,6 +23,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class MascotaController {
     @Autowired
     MascotaService mascotaService;
+
+    @Autowired
+    DuenoService duenoService;
 
     // http://localhost:8090/mascotas/all
     @GetMapping("/all")
@@ -55,6 +61,13 @@ public class MascotaController {
 
     @PostMapping("/agregar")
     public String agregarMascota(@ModelAttribute("mascota") Mascota mascota) {
+
+        Dueno dueno = duenoService.findByCedula(mascota.getDueno().getCedula());
+
+        mascota.setDueno(dueno);
+
+        
+
         mascotaService.add(mascota);
 
         
@@ -77,6 +90,11 @@ public class MascotaController {
     @PostMapping("/update/{id}")
     public String actualizarMascota(@ModelAttribute("mascota") Mascota mascota) {
         
+
+        Dueno dueno = duenoService.findByCedula(mascota.getDueno().getCedula());
+
+        mascota.setDueno(dueno);
+
         mascotaService.update(mascota);
 
         return "redirect:/mascotas/all";

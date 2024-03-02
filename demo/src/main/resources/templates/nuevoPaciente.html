@@ -26,8 +26,6 @@
                 <label for="nombre">Nombre:</label>
                 <input th:field="*{nombre}" type="text" id="nombre" name="nombre" placeholder="Ingrese el nombre del paciente" required>
 
-                <label for="id" hidden>ID</label>  <!-- Campo necesario para que redirija, no se muestra en el formulario-->
-                <input th:field="*{id}" type="hidden" name="id" id="id">
 
                 <label for="raza">Raza:</label>
                 <input th:field="*{raza}" type="text" id="raza" name="raza" placeholder="Ingrese la raza del paciente" required>
@@ -46,6 +44,10 @@
 
                 <label for="estado" hidden>Estado</label>
                 <input th:field="*{estado}" type="hidden" name="estado" id="estado" value="Activo">
+
+                <label for="cedulaDueno">Cédula del Dueño:</label>
+                <input th:field="*{dueno.cedula}" type="text" id="cedulaDueno" name="cedulaDueno" placeholder="Ingrese la cédula del dueño" required>
+
                 
                 <button type="submit">Agregar Paciente</button>
             </form>
