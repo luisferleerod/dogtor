@@ -16,7 +16,15 @@
         <img src="/img/logo_horizontal.png" alt="">
     </header>
 
-    <h1>Todos los dueños</h1>
+    <div class="titulo-mascotas">
+        <div class="titulo-todas-las-mascotas">
+            <h1 class="titulo">Todas los Dueños</h1>
+        </div>
+        <div class="mas">
+            <a type="button" th:href="@{/mascotas/add}"><img src="/img/mas.png" alt=""></a>
+        </div>
+        
+    </div>
 
     <div>
         <table class="tabla">
@@ -40,9 +48,9 @@
                     <td th:text="${dueno.getCorreo()}"></td>
                     <td th:text="${dueno.getCelular()}"></td>
 
-                    <td>
-                        <a th:href="@{/dueno/update/{id}(id=${dueno.getId()})}">Editar</a>
-                        <a th:href="@{/dueno/delete/{id}(id=${dueno.getId()})}">Eliminar</a>
+                    <td class="td-botones">
+                        <a class="boton" th:href="@{/dueno/update/{id}(id=${dueno.getId()})}">Editar</a>
+                        <a class="boton" th:href="@{/dueno/delete/{id}(id=${dueno.getId()})}">Eliminar</a>
                     </td>
                 </tr>
             </tbody>
