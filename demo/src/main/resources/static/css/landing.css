@@ -216,6 +216,7 @@ nav{
     box-shadow: 5px 5px 10px rgba(0, 0, 0, .7);
     transition-duration: 400ms;
     cursor: pointer;
+    background-color: rgb(203, 217, 222);
 }
 
 .servicio h2 {

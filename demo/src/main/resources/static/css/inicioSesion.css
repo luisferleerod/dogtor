@@ -23,16 +23,16 @@ body {
 
 }
 
-.contnedor-login {
+.contenedor-login {
     display: grid;
     place-items: center;
     background-color: #E9F6FB;
-    padding: 1rem;
+    padding: 2rem 2rem 1rem 2rem;
     border-radius: .7rem;
     text-align: center;
     width: 18rem;
     height: 20rem;
-    margin-left: 15rem;
+    margin-left: 10rem;
     margin-top: 8rem;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
 }
@@ -60,7 +60,7 @@ h1 {
 }
 
 form {
-    width: 80%;
+    width: 100%;
 }
 
 form label {
