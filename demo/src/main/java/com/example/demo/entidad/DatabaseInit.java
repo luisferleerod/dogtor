@@ -1,6 +1,8 @@
 package com.example.demo.entidad;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
@@ -130,40 +132,83 @@ public class DatabaseInit implements ApplicationRunner{
         duenoRepository.save(new Dueno("1234", "Juan", "juancito@juancito", "11111"));
         duenoRepository.save(new Dueno("4321", "Pedro", "pedro@pedro", "22222"));
         duenoRepository.save(new Dueno("789", "Maria", "maria@maria", "33333"));
+        duenoRepository.save(new Dueno("123", "Juan", "juan@dominio.com", "111111111"));
+        duenoRepository.save(new Dueno("124", "Pedro", "pedro@dominio.com", "222222222"));
+        duenoRepository.save(new Dueno("125", "Maria", "maria@dominio.com", "333333333"));
+        duenoRepository.save(new Dueno("126", "Luis", "luis@dominio.com", "444444444"));
+        duenoRepository.save(new Dueno("127", "Ana", "ana@dominio.com", "555555555"));
+        duenoRepository.save(new Dueno("128", "Carlos", "carlos@dominio.com", "666666666"));
+        duenoRepository.save(new Dueno("129", "Laura", "laura@dominio.com", "777777777"));
+        duenoRepository.save(new Dueno("130", "Gabriel", "gabriel@dominio.com", "888888888"));
+        duenoRepository.save(new Dueno("131", "Sofia", "sofia@dominio.com", "999999999"));
+        duenoRepository.save(new Dueno("132", "Eduardo", "eduardo@dominio.com", "1010101010"));
+        duenoRepository.save(new Dueno("133", "Marta", "marta@dominio.com", "1111111111"));
+        duenoRepository.save(new Dueno("134", "Roberto", "roberto@dominio.com", "1212121212"));
+        duenoRepository.save(new Dueno("135", "Carmen", "carmen@dominio.com", "1313131313"));
+        duenoRepository.save(new Dueno("136", "Javier", "javier@dominio.com", "1414141414"));
+        duenoRepository.save(new Dueno("137", "Isabel", "isabel@dominio.com", "1515151515"));
+        duenoRepository.save(new Dueno("138", "Francisco", "francisco@dominio.com", "1616161616"));
+        duenoRepository.save(new Dueno("139", "Elena", "elena@dominio.com", "1717171717"));
+        duenoRepository.save(new Dueno("140", "Andres", "andres@dominio.com", "1818181818"));
+        duenoRepository.save(new Dueno("141", "Raquel", "raquel@dominio.com", "1919191919"));
+        duenoRepository.save(new Dueno("142", "Hector", "hector@dominio.com", "2020202020"));
+        duenoRepository.save(new Dueno("143", "Beatriz", "beatriz@dominio.com", "2121212121"));
+        duenoRepository.save(new Dueno("144", "Fernando", "fernando@dominio.com", "2222222222"));
+        duenoRepository.save(new Dueno("145", "Monica", "monica@dominio.com", "2323232323"));
+        duenoRepository.save(new Dueno("146", "Antonio", "antonio@dominio.com", "2424242424"));
+        duenoRepository.save(new Dueno("147", "Silvia", "silvia@dominio.com", "2525252525"));
+        duenoRepository.save(new Dueno("148", "Ricardo", "ricardo@dominio.com", "2626262626"));
+        duenoRepository.save(new Dueno("149", "Natalia", "natalia@dominio.com", "2727272727"));
+        duenoRepository.save(new Dueno("150", "Alberto", "alberto@dominio.com", "2828282828"));
+        duenoRepository.save(new Dueno("151", "Adriana", "adriana@dominio.com", "2929292929"));
+        duenoRepository.save(new Dueno("152", "Julio", "julio@dominio.com", "3030303030"));
+        duenoRepository.save(new Dueno("153", "Diana", "diana@dominio.com", "3131313131"));
+        duenoRepository.save(new Dueno("154", "Miguel", "miguel@dominio.com", "3232323232"));
+        duenoRepository.save(new Dueno("155", "Paola", "paola@dominio.com", "3333333333"));
+        duenoRepository.save(new Dueno("156", "Oscar", "oscar@dominio.com", "3434343434"));
+        duenoRepository.save(new Dueno("157", "Camila", "camila@dominio.com", "3535353535"));
+        duenoRepository.save(new Dueno("158", "Roberto", "roberto@dominio.com", "3636363636"));
+        duenoRepository.save(new Dueno("159", "Carolina", "carolina@dominio.com", "3737373737"));
+        duenoRepository.save(new Dueno("160", "Juan", "juan@dominio.com", "3838383838"));
+        duenoRepository.save(new Dueno("161", "Alicia", "alicia@dominio.com", "3939393939"));
+        duenoRepository.save(new Dueno("162", "Erick", "erick@dominio.com", "4040404040"));
+        duenoRepository.save(new Dueno("163", "Gabriela", "gabriela@dominio.com", "4141414141"));
+        duenoRepository.save(new Dueno("164", "Arturo", "arturo@dominio.com", "4242424242"));
+        duenoRepository.save(new Dueno("165", "Rocio", "rocio@dominio.com", "4343434343"));
+        duenoRepository.save(new Dueno("166", "Luis", "luis@dominio.com", "4444444444"));
+        duenoRepository.save(new Dueno("167", "Paula", "paula@dominio.com", "4545454545"));
+        duenoRepository.save(new Dueno("168", "Carlos", "carlos@dominio.com", "4646464646"));
+        duenoRepository.save(new Dueno("169", "Sofia", "sofia@dominio.com", "4747474747"));
+        duenoRepository.save(new Dueno("170", "Jorge", "jorge@dominio.com", "4848484848"));
 
 
-        // //asociar mascotas a dueños
-        // Dueno asociar= duenoRepository.findById(1L).get();
-        // for(Mascota m: mascotaRepository.findAll()){
-        //     m.setDueno(asociar);
-        //     mascotaRepository.save(m);
-        // }
 
-
-         // Obtener los dueños por id
-        Dueno dueno1 = duenoRepository.findById(1L).get();
-        Dueno dueno2 = duenoRepository.findById(2L).get();
-        Dueno dueno3 = duenoRepository.findById(3L).get();
-
-        // Obtener todas las mascotas
+        List<Dueno> duenos = duenoRepository.findAll();
         List<Mascota> mascotas = mascotaRepository.findAll();
 
-        // Asociar las primeras 33 mascotas al dueño 1
-        for (int i = 0; i < 33 && i < mascotas.size(); i++) {
-            mascotas.get(i).setDueno(dueno1);
-            mascotaRepository.save(mascotas.get(i));
-        }
+        Random random = new Random();
 
-        // Asociar las siguientes 33 mascotas al dueño 2
-        for (int i = 33; i < 66 && i < mascotas.size(); i++) {
-            mascotas.get(i).setDueno(dueno2);
-            mascotaRepository.save(mascotas.get(i));
+        for (Dueno dueno : duenos) {
+            int numMascotasAsignadas = 2; // Establecer el número deseado de mascotas por dueño
+            List<Mascota> mascotasAsignadas = new ArrayList<>();
+        
+            for (int i = 0; i < numMascotasAsignadas && mascotas.size() > 0; i++) {
+                int indexMascota = random.nextInt(mascotas.size());
+                Mascota mascota = mascotas.get(indexMascota);
+        
+                mascota.setDueno(dueno); // Establecer la relación en la mascota
+                mascotasAsignadas.add(mascota);
+        
+                mascotaRepository.save(mascota); // Guardar la mascota con el nuevo dueño
+                mascotas.remove(indexMascota); // Eliminar la mascota de la lista general
+            }
+        
+            dueno.setMascotas(mascotasAsignadas);
+            duenoRepository.save(dueno); // Guardar el dueño con las mascotas asignadas
         }
-
-        // Asociar las últimas mascotas al dueño 3
-        for (int i = 66; i < mascotas.size(); i++) {
-            mascotas.get(i).setDueno(dueno3);
-            mascotaRepository.save(mascotas.get(i));
-        }
+        
+        
+    
     }
 }
+

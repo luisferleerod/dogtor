@@ -1,4 +1,6 @@
 package com.example.demo.controlador;
+import java.util.NoSuchElementException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -7,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.example.demo.entidad.Dueno;
 import com.example.demo.entidad.Mascota;
 import com.example.demo.errorHandling.notFoundException;
-
 import com.example.demo.servicio.DuenoService;
 import com.example.demo.servicio.MascotaService;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -37,17 +38,17 @@ public class MascotaController {
     // http://localhost:8090/mascotas/find/1
     @GetMapping("/find/{id}")
     public String MostrarInfoMascota(Model model, @PathVariable("id") Long id) {
-        Mascota mascota = mascotaService.findById(id);
-        if(mascota != null) {
+        try {
+            Mascota mascota = mascotaService.findById(id);
             model.addAttribute("mascota", mascota);
-        }
-        else{
+            return "mostrarMascota";
+        } catch (NoSuchElementException ex) {
             throw new notFoundException(id);
         }
-
-        model.addAttribute("mascota", mascotaService.findById(id));
-        return "mostrarMascota";
     }
+
+    
+    
 
     // http://localhost:8090/mascotas/add
     @GetMapping("/add")

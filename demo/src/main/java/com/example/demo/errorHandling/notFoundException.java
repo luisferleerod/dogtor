@@ -4,8 +4,8 @@ public class notFoundException extends RuntimeException {
 
     private Long id;
 
-    public notFoundException(Long id2) {
-        this.id = id2;
+    public notFoundException(Long id) {
+        this.id = id;
     }
 
     public Long getId() {
