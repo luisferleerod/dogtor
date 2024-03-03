@@ -47,22 +47,29 @@
             </div>
     </section>
 
-    <section class="tratamientos">
-        <h1>Tus Mascotas</h1>
-        <table>
-            <tr>
-                <td class="contenido-tabla borer-radius1">Max</td>
-                <td class="boton-tabla borer-radius2">
-                    <a class="borer-radius2" href="http://localhost:8090/mascotas/find/1" target="_blank">Ver Información</a>
-                </td>
-            </tr>
-            <tr>
-                <td class="contenido-tabla borer-radius4">Dash</td>
-                <td class="boton-tabla borer-radius3">
-                    <a class="borer-radius2" href="http://localhost:8090/mascotas/find/1" target="_blank">Ver Información</a>
-                </td>
-        </table>
-    </section>
+    <!-- Sección para mostrar las mascotas -->
+        <section class="tratamientos">
+            <h1>Tus Mascotas</h1>
+            <table>
+                <tr>
+                    <th class="contenido-tabla borer-radius1">Nombre</th>
+                    <th class="contenido-tabla borer-radius2">Raza</th>
+                    <th class="contenido-tabla">Información</th>
+                </tr>
+                <!-- Iterar sobre las mascotas del dueño y mostrar sus detalles -->
+                <tr th:each="mascota, iterStat : ${dueno.mascotas}"
+                    th:class="${iterStat.odd} ? 'odd-row' : 'even-row'" >
+                    <td th:text="${mascota.nombre}" class="contenido-tabla borer-radius1"></td>
+                    <td th:text="${mascota.raza}" class="contenido-tabla borer-radius2"></td>
+                    <td class="boton-tabla">
+                        <a th:href="@{/mascotas/find/{id}(id=${mascota.getId()})}">ver Información </a> 
+                    </td>
+                    
+                    <!--  -->
+                </tr>
+            </table>
+        </section>
+
 
     <footer>
         <div class="datos">
