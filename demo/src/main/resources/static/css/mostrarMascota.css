@@ -6,6 +6,14 @@
     --font-dosis: 'Dosis', sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+*{
+    scroll-margin-top: 70px;
+}
+
 body {
     box-sizing: border-box;
     background-color: var(--color-primario);
@@ -14,33 +22,9 @@ body {
     overflow-y: scroll;
     scroll-behavior: smooth;
     background-color: #ffffff;
-    margin: 6rem 0rem 0rem 0rem;
+    margin: 4rem 0rem 0rem 0rem;
     padding: 0;
 
-}
-
-header {
-    display: flex;
-    align-items: center;
-    background-color: var(--color-secundario);
-    color: white;
-    position: fixed;
-    width: 100%;
-    height: 6rem;
-    top: 0;
-    padding: 0 3rem .5rem 3rem;
-    
-}
-
-header h1{
-    margin: 0;
-    color: white;
-    text-transform: uppercase;
-    margin: 1rem 0 1rem 1rem;
-}
-
-header img {
-    width: 4rem;
 }
 
 h2{
@@ -51,17 +35,33 @@ h2{
     margin: 0;
 }
 
+/* Estilos Para la primera seccion */
+
 .datos-paciente-imagen {
     display: flex;
     max-width: 100%;
 }
 
 .datos-paciente {
-    margin: 0 3rem 0 3rem;
+    transition: .3s;
+    margin: 2rem 2rem 0 3rem;
     display: block;
     align-items: center;
-    max-width:  100%;
+    width: 700px;
+    height: auto;
+    box-shadow: inset;
+    border-radius: .7rem;
+    padding: 1rem;
+    
+}
 
+.datos-paciente:hover {
+    box-shadow: 5px 5px 10px rgba(0.5, 0.5, 0.5, 0.5);
+    transition: .2s;
+    .titulo {
+        transition: .2s;
+        background-color: #e55807;
+    }
 }
 
 .datos-imagen {
@@ -71,7 +71,8 @@ h2{
 
 .imagen-perro {
     width: 450px;
-    margin: 2rem 0 0 4rem;
+    max-height: 300px;
+    margin: 2rem 0 0 2rem;
     border-radius: 5%;
     box-shadow: 5px 5px 10px rgba(0.5, 0.5, 0.5, 0.5);
 }
@@ -82,6 +83,122 @@ table {
     overflow: hidden;
     background-color: #035A6C;
     color: white;
+}
+
+.titulo-tabla {
+    font-weight: bold;
+    background-color: #9EF0F7;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 1rem;
+    font-size: 18px;
+}
+
+.datos-paciente td{
+    padding: 1rem 6rem 1rem 6rem;
+    margin: 0;
+}
+
+.titulo{
+    color: white;
+    padding: .3rem 3rem .3rem 3rem;
+    background-color: #1B9AB5;
+    margin: 0rem 0 .2rem 0;
+    text-align: center;
+    border-radius: .7rem;
+    text-transform: uppercase;
+    transition: .3s;
+}
+
+/* Estilos para la segunda seccion */
+
+.titulo2 {
+    transition: .3s;
+    color: white;
+    background-color: var(--color-secundario);
+    width: 91.5%;
+    padding: .4rem 3rem;
+    text-align: center;
+    border-radius: .7rem;
+    margin: 0 0 .2rem 0;
+}
+
+.tratamientos {
+    transition: .2s;
+    width: 88%;
+    padding: 1rem;
+    margin: 2rem 3rem  3rem;
+    align-items: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem;
+    border-radius: .7rem;
+}
+
+.tratamientos:hover {
+    box-shadow: 5px 5px 10px rgba(0.5, 0.5, 0.5, 0.5);
+    transition: .2s;
+    .titulo2{
+        transition: .2s;
+        background-color: #e55807;
+    }   
+}
+
+.contenido-tabla {
+    text-align: center;
+    background-color: #D5FCFF;
+    color: black;
+    font-weight: bold;
+    padding: 1rem;
+    font-size: 18px;
+    
+}
+
+a { 
+    text-decoration: none;
+    color: black;
+}
+
+.boton-tabla {
+    text-align: center;
+    width: 70%;
+    background-color: #D5FCFF;
+    color: black;
+    font-weight: bold;
+    font-style: none;
+}
+
+.boton-tabla:hover {
+    transition: .2s;
+    background-color: #66ecfa;
+    color: black;
+    border: none;
+    cursor: pointer;
+    padding: 1rem 0 1rem 0;
+    margin: 0;
+
+}
+
+.tus-mascotas table {
+    border-radius: .7rem .7rem 0 0;
+    width: 100%;
+}
+
+.tus-mascotas h1 {
+    color: white;
+    font-size: 30px;
+    margin: 0 0 .3rem 0rem;
+    text-align: center;
+    background-color: #1B9AB5;
+    width: 100%;
+    border-radius: .5rem;
+
+}
+
+.ver-info {
+    width: 100%;
+    padding: 1rem 21rem;
 }
 
 .borer-radius1 {
@@ -98,73 +215,6 @@ table {
 
 .borer-radius4 {
     border-radius: 0 0 0 .6rem;
-}
-
-.titulo-tabla {
-    font-weight: bold;
-    background-color: #9EF0F7;
-    color: rgb(0, 0, 0);
-    text-align: center;
-    padding: 0rem;
-    font-size: 18px;
-}
-
-.titulo-tabla-tratamientos {
-    color: black;
-    background-color: #9EF0F7;
-    padding: .5rem;
-}
-
-.datos-paciente td{
-    padding: 1rem 6rem 1rem 6rem;
-    margin: 0;
-}
-
-.titulo{
-    color: white;
-    padding: .3rem 3rem .3rem 3rem;
-    background-color: #1B9AB5;
-    margin: 3rem 0 .3rem 0;
-    text-align: center;
-    border-radius: .7rem;
-    text-transform: uppercase;
-}
-
-.contenido-tabla {
-    text-align: center;
-    background-color: #D5FCFF;
-    color: black;
-    font-weight: bold;
-    padding: .6rem;
-    font-size: 18px;
-}
-
-
-.tratamientos {
-    width: 93%;
-    margin: 2rem 3rem 0 3rem;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-}
-
-.tratamientos table {
-    width: 100%;
-}
-
-.tratamientos h1 {
-    color: white;
-    font-size: 30px;
-    margin: 0 0 .3rem 0rem;
-    text-align: center;
-    background-color: #1B9AB5;
-    width: 100%;
-    border-radius: .5rem;
-
-}
-
-.tratamientos .titulo-tabla {
-    background-color: var(--color-secundario);
 }
 
 footer {
@@ -213,3 +263,4 @@ footer {
     transition: transform 0.2s ease-in-out;
     cursor: pointer;
 }
+
