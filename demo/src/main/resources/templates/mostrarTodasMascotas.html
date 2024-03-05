@@ -8,22 +8,32 @@
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300&display=swap" rel="stylesheet">
     <link rel="icon" href="/img/logo_basico_fondo.png" type="img/logo_basico">
     <link rel="stylesheet" href="/css/mostrarTodasMascotas.css" />
+    <link rel="stylesheet" href="/css/header.css" />
     <link rel="stylesheet" href="/css/footer.css" />
     <title>Bienvenido a DOGTOR</title>
 </head>
 <body>
-    <header class="logo-horizontal">
-        <img src="/img/logo_horizontal.png" alt="">
+    <header>
+        <div class="logo">
+            <img src="/img/logo_basico_blanco.png" alt="">
+            <h1>Veterinario: </h1>
+        </div>
+        
+        <nav class="navegacion-principal">
+            <ul class="menu-principal">  
+                <a href="#datos-dueno"><li>Tu Información</li></a>
+                <a href="#mascotas"><li>Tus Mascotas</li></a>
+                <a href="http://localhost:8090"><li class="inicio-sesion">Cerrar Sesión</li></a>
+            </ul>
+        </nav>
+        
     </header>
 
     <div class="titulo-mascotas">
         <div class="titulo-todas-las-mascotas">
             <h1 class="titulo">Todas las Mascotas</h1>
+            <a type="button" class="mas" th:href="@{/mascotas/add}"><img src="/img/mas.png" alt=""></a>
         </div>
-        <div class="mas">
-            <a type="button" th:href="@{/mascotas/add}"><img src="/img/mas.png" alt=""></a>
-        </div>
-        
     </div>
     
     <div>
@@ -35,7 +45,6 @@
                     <th>Edad</th>
                     <th>Peso</th>
                     <th>Enfermedad</th>
-                    <th>Foto</th>
                     <th>Estado</th>
                     <th>Acciones</th>
                 </tr>
@@ -44,18 +53,40 @@
                 <tr th:each="mascota, iterStat : ${mascotas}" 
                     th:class="${iterStat.odd} ? 'odd-row' : 'even-row'" >
                     <td >
-                        <a th:href="@{/mascotas/find/{id}(id=${mascota.getId()})}" th:text="${mascota.getNombre()}"> </a> 
+                        <a th:text="${mascota.getNombre()}"> </a>
                     </td>
                     <td th:text="${mascota.getRaza()}"></td>
                     <td th:text="${mascota.getEdad()}"></td>
                     <td th:text="${mascota.getPeso()}"></td>
                     <td th:text="${mascota.getEnfermedad()}"></td>
-                    <td th:text="${mascota.getFoto()}"></td>
                     <td th:text="${mascota.getEstado()}"></td>
 
                     <td class="td-botones">
-                        <a class="boton" th:href="@{/mascotas/update/{id}(id=${mascota.getId()})}">Editar</a>
-                        <a class="boton" th:href="@{/mascotas/delete/{id}(id=${mascota.getId()})}">Eliminar</a>
+                        <div contenedor-boton>
+                            <a th:href="@{/mascotas/delete/{id}(id=${mascota.getId()})}">
+                                <img class="boton-borrar" src="/img/borrar_rojo.png" alt="">
+                                <img class="boton-borrar" src="/img/borrar.png" alt="">
+                            </a>
+                        </div>
+
+                        <div contenedor-boton2>
+                            <a th:href="@{/mascotas/update/{id}(id=${mascota.getId()})}">
+                                <img class="boton-borrar" src="/img/editar_azul.png" alt="">
+                                <img class="boton-borrar" src="/img/editar.png" alt="">
+                            </a>
+
+                        </div>
+
+                        <div contenedor-boton3>
+                            <a th:href="@{/mascotas/find/{id}(id=${mascota.getId()})}">
+                                <img class="boton-borrar" src="/img/ver_naranja.png" alt="">
+                                <img class="boton-borrar" src="/img/ver.png" alt="">
+                            </a>
+                            
+
+                        </div>
+                        
+
                     </td>
                 </tr>
             </tbody>

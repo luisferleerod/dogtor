@@ -11,10 +11,12 @@ header {
     position: fixed;
     width: 100%;
     top: 0;
+    margin-left: 0;
     padding-bottom: .4rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 1000;
 }
 
 .logo {
