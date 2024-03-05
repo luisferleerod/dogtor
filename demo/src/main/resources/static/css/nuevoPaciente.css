@@ -33,13 +33,14 @@ input::-webkit-inner-spin-button {
 }
 
 .contenedor-formulario {
-    width: 350px;
+    width: 500px;
     padding: 25px;
     border: 1px solid #ccc;
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-left: 400px;
     margin-bottom: 20px;
-    background-color: #fff;
+    background-color: #E9F6FB;
 }
 
 .logo-container {
@@ -60,7 +61,7 @@ h1 {
     font-size: 35px;
 }
 
-form {
+.formulario {
     display: flex;
     flex-direction: column;
 }
@@ -82,7 +83,41 @@ input {
     font-size: 12px;
 }
 
+input,
+select {
+    padding: 8px; /* Reducir el espaciado interno */
+    margin-bottom: 10px; /* Reducir el espaciado inferior */
+    color: #818181;
+    background-color: #9DEEFF;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.contenedor-inputs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Otra opción es usar space-around o space-evenly según tu preferencia */
+}
+
+.primera-columna,
+.segunda-columna {
+    box-sizing: border-box;
+    width: 48%; /* Puedes ajustar este porcentaje según tu diseño */
+    display: flex;
+    flex-direction: column; /* Cambiar la dirección del flexbox a columna */
+}
+
+.primera-columna label,
+.segunda-columna label {
+    text-align: left; /* Alinear el texto del label a la izquierda */
+}
+
+.segunda-columna button{
+    margin-top: 26px;
+}
 button {
+    margin-top: 20px;
     padding: 10px;
     background-color: #E55807;
     color: #fff;
