@@ -37,18 +37,19 @@ public class DuenoController {
     @PostMapping("/inicioSesion")
     public String iniciarSesion(@ModelAttribute("dueno") Dueno dueno, Model model) {
         Dueno duenoEncontrado = duenoService.findByCedula(dueno.getCedula());
-
+    
         if (duenoEncontrado != null) {
             // Agregar el objeto Dueno al modelo
             model.addAttribute("dueno", duenoEncontrado);
             // Redirigir a una página que muestre los detalles del usuario
             return "mostrarDueno";
         } else {
-            
             model.addAttribute("error", "Cédula incorrecta");
+            model.addAttribute("cedulaNoExiste", true);
             return "inicioSesion";
         }
     }
+    
 
 
     

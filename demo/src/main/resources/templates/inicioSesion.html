@@ -9,6 +9,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300&display=swap" rel="stylesheet">
     <link rel="icon" href="img/logo_basico_fondo.png" type="img/logo_basico">
     <link rel="stylesheet" type="text/css" href="/css/inicioSesion.css" />
+    <script th:if="${cedulaNoExiste}">
+        alert("No existe esa cédula");
+    </script>
     <title>Iniciar Sesión</title>
 </head>
 <body>
