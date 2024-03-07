@@ -90,7 +90,7 @@ public class MascotaController {
             model.addAttribute("error", "Cédula incorrecta");
             model.addAttribute("cedulaNoExiste", true);
             
-            return "redirect:/mascotas/add";
+            return "nuevoPaciente";
         }
         
             
@@ -142,7 +142,7 @@ public class MascotaController {
             model.addAttribute("error", "Cédula incorrecta");
             model.addAttribute("cedulaNoExiste", true);
             
-            return "redirect:/mascotas/update/{id}";
+            return "actualizarMascota";
         }
         
             
