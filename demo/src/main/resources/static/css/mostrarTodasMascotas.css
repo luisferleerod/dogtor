@@ -93,30 +93,36 @@ td {
     background-color: #D5FCFF;
     justify-content: center;
     align-items: center;
+
 }
 
-.td-botones {
+.contenedor-botones {
     display: flex;
     justify-content: space-between;
-    padding: 2rem;
-    align-items: left;
+    margin-right: 1.6rem;
+    color: #D5FCFF;
+    height: 26px;
 }
 
 .contenedor-boton,
 .contenedor-boton2,
 .contenedor-boton3 {
-    display: flex; /* Utilizar flexbox para organizar las imágenes */
-    width: 50px;
-    height: 50px;
-    margin: 0 1rem;
+  
+  display: flex; /* Utilizar flexbox para organizar las imágenes */
+  width: 50px;
+  height: 50px;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
 }
+
 
 .boton-borrar {
     width: 25px;
     height: 25px;
     position: absolute;
-
-}
+    margin: 0 auto; /* Center image horizontally and vertically */
+  }
+  
 
 .boton-borrar:hover {
     opacity: 0;

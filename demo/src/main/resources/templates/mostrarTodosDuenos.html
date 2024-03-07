@@ -59,30 +59,31 @@
                     <td th:text="${dueno.getCelular()}"></td>
 
                     <td class="td-botones">
-                        <div contenedor-boton>
-                            <a th:href="@{/dueno/delete/{id}(id=${dueno.getId()})}">
-                                <img class="boton-borrar" src="/img/borrar_rojo.png" alt="">
-                                <img class="boton-borrar" src="/img/borrar.png" alt="">
-                            </a>
+                        <div class="contenedor-botones">
+                            <div contenedor-boton>
+                                <a th:href="@{/dueno/delete/{id}(id=${dueno.getId()})}">
+                                    <img class="boton-borrar" src="/img/borrar_rojo.png" alt="">
+                                    <img class="boton-borrar" src="/img/borrar.png" alt="">
+                                </a>
+                            </div>
+    
+                            <div contenedor-boton2>
+                                <a th:href="@{/dueno/update/{id}(id=${dueno.getId()})}">
+                                    <img class="boton-borrar" src="/img/editar_azul.png" alt="">
+                                    <img class="boton-borrar" src="/img/editar.png" alt="">
+                                </a>
+    
+                            </div>
+    
+                            <div contenedor-boton3>
+                                <a th:href="@{/dueno/find/{id}(id=${dueno.getCedula()})}">
+                                    <img class="boton-borrar" src="/img/ver_naranja.png" alt="">
+                                    <img class="boton-borrar" src="/img/ver.png" alt="">
+                                </a>
+                                
+    
+                            </div>
                         </div>
-
-                        <div contenedor-boton2>
-                            <a th:href="@{/dueno/update/{id}(id=${dueno.getId()})}">
-                                <img class="boton-borrar" src="/img/editar_azul.png" alt="">
-                                <img class="boton-borrar" src="/img/editar.png" alt="">
-                            </a>
-
-                        </div>
-
-                        <div contenedor-boton3>
-                            <a th:href="@{/dueno/find/{id}(id=${dueno.getCedula()})}">
-                                <img class="boton-borrar" src="/img/ver_naranja.png" alt="">
-                                <img class="boton-borrar" src="/img/ver.png" alt="">
-                            </a>
-                            
-
-                        </div>
-                        
 
                     </td>
                 </tr>

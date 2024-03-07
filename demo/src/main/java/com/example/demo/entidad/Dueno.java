@@ -14,6 +14,7 @@ public class Dueno {
     private String nombre;
     private String correo;
     private String celular;
+    
 
     @Id
     @GeneratedValue

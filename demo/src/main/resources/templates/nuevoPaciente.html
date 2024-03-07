@@ -7,7 +7,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
-  
+  <script th:if="${cedulaNoExiste}">
+    alert("No existe esa cédula");
+</script>
   <title>Nuevo Paciente</title>
 </head>
 <body>

@@ -4,12 +4,11 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+
 
 //POJO (Plain Old Java Object)
 //Crea la tabla acorde a la entidad
 @Entity 
-@Table(name="MASCOTA_TABLE")
 public class Mascota {
     
 

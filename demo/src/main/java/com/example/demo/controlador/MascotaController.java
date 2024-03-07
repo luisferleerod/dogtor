@@ -61,26 +61,61 @@ public class MascotaController {
     }
 
     @PostMapping("/agregar")
-    public String agregarMascota(@ModelAttribute("mascota") Mascota mascota) {
+    public String agregarMascota(@ModelAttribute("mascota") Mascota mascota, Model model) {
 
+        // Dueno dueno = duenoService.findByCedula(mascota.getDueno().getCedula());
+
+        // mascota.setDueno(dueno);
+
+        
+
+        // mascotaService.add(mascota);
+
+        
+        // return "redirect:/mascotas/all";
+
+        
         Dueno dueno = duenoService.findByCedula(mascota.getDueno().getCedula());
 
-        mascota.setDueno(dueno);
+        if(dueno != null){
+            mascota.setDueno(dueno);
 
+            mascotaService.update(mascota);
+    
+            return "redirect:/mascotas/all";
+            
+           
+        }
+        else{
+            model.addAttribute("error", "Cédula incorrecta");
+            model.addAttribute("cedulaNoExiste", true);
+            
+            return "redirect:/mascotas/add";
+        }
         
+            
 
-        mascotaService.add(mascota);
-
-        
-        return "redirect:/mascotas/all";
-    }
+        }
+    
     
     @GetMapping("/delete/{id}")
     public String borrarMascota(@PathVariable("id") Long id) {
-        mascotaService.deleteById(id);
-
+        // Obtener la mascota por ID
+        Mascota mascota = mascotaService.findById(id);
+    
+        // Verificar si la mascota existe
+        if (mascota != null) {
+            // Cambiar el estado de la mascota a "inactivo"
+            mascota.setEstado("inactivo"); // Suponiendo que tienes un campo "estado" en tu entidad Mascota
+    
+            // Guardar la mascota actualizada en la base de datos
+            mascotaService.update(mascota);
+        }
+    
+        // Redirigir a la página que muestra todas las mascotas
         return "redirect:/mascotas/all";
     }
+    
 
     @GetMapping("/update/{id}")
     public String mostrarFormularioUpdate(@PathVariable("id") Long id, Model model) {
@@ -89,15 +124,30 @@ public class MascotaController {
     }
 
     @PostMapping("/update/{id}")
-    public String actualizarMascota(@ModelAttribute("mascota") Mascota mascota) {
+    public String actualizarMascota(@ModelAttribute("mascota") Mascota mascota, Model model) {
         
 
         Dueno dueno = duenoService.findByCedula(mascota.getDueno().getCedula());
 
-        mascota.setDueno(dueno);
+        if(dueno != null){
+            mascota.setDueno(dueno);
 
-        mascotaService.update(mascota);
+            mascotaService.update(mascota);
+    
+            return "redirect:/mascotas/all";
+            
+           
+        }
+        else{
+            model.addAttribute("error", "Cédula incorrecta");
+            model.addAttribute("cedulaNoExiste", true);
+            
+            return "redirect:/mascotas/update/{id}";
+        }
+        
+            
 
-        return "redirect:/mascotas/all";
-    }
+        }
+      
+    
 }
