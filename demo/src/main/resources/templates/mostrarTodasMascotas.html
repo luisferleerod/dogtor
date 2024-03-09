@@ -63,33 +63,29 @@
 
                     <td class="td-botones">
                         <div class="contenedor-botones">
+
+                            <div contenedor-boton3>
+                                <a th:href="@{/mascotas/find/{id}(id=${mascota.getId()})}">
+                                    <img class="boton-borrar" src="/img/ver_naranja.png" alt="">
+                                    <img class="boton-borrar" src="/img/ver.png" alt="">
+                                </a>
+                            </div>
+                            
+                            <div contenedor-boton2>
+                                <a th:href="@{/mascotas/update/{id}(id=${mascota.getId()})}">
+                                    <img class="boton-borrar" src="/img/editar_azul.png" alt="">
+                                    <img class="boton-borrar" src="/img/editar.png" alt="">
+                                </a>
+                            </div>
+    
                             <div contenedor-boton>
                                 <a th:href="@{/mascotas/delete/{id}(id=${mascota.getId()})}">
                                     <img class="boton-borrar" src="/img/borrar_rojo.png" alt="">
                                     <img class="boton-borrar" src="/img/borrar.png" alt="">
                                 </a>
                             </div>
-    
-                            <div contenedor-boton2>
-                                <a th:href="@{/mascotas/update/{id}(id=${mascota.getId()})}">
-                                    <img class="boton-borrar" src="/img/editar_azul.png" alt="">
-                                    <img class="boton-borrar" src="/img/editar.png" alt="">
-                                </a>
-    
-                            </div>
-    
-                            <div contenedor-boton3>
-                                <a th:href="@{/mascotas/find/{id}(id=${mascota.getId()})}">
-                                    <img class="boton-borrar" src="/img/ver_naranja.png" alt="">
-                                    <img class="boton-borrar" src="/img/ver.png" alt="">
-                                </a>
-                                
-    
-                            </div>
-                            
                         </div>
-                        
-
+                    
                     </td>
                 </tr>
             </tbody>

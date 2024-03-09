@@ -37,7 +37,7 @@ input::-webkit-inner-spin-button {
     border: 1px solid #ccc;
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 10px; /* Reducir el espaciado inferior */
+    margin: 0rem 0 0rem 30rem;
     background-color: #fff;
 }
 

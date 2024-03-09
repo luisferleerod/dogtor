@@ -98,7 +98,7 @@ td {
 
 .contenedor-botones {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-right: 1.6rem;
     color: #D5FCFF;
     height: 26px;
