@@ -1,5 +1,6 @@
 package com.example.demo.entidad;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -9,8 +10,13 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Controller;
 
+import com.example.demo.repositorio.AdministradorRepository;
+import com.example.demo.repositorio.DrogaRepository;
 import com.example.demo.repositorio.DuenoRepository;
+import com.example.demo.repositorio.EspecialidadRepository;
 import com.example.demo.repositorio.MascotaRepository;
+import com.example.demo.repositorio.TratamientoRepository;
+import com.example.demo.repositorio.VeterinarioRepository;
 
 import jakarta.transaction.Transactional;
 
@@ -23,6 +29,22 @@ public class DatabaseInit implements ApplicationRunner{
 
     @Autowired
     MascotaRepository mascotaRepository;
+
+    @Autowired
+    EspecialidadRepository especialidadRepository;
+
+    @Autowired
+    AdministradorRepository administradorRepository;
+
+    @Autowired
+    DrogaRepository drogaRepository;
+
+    @Autowired
+    VeterinarioRepository veterinarioRepository;
+
+    @Autowired
+    TratamientoRepository tratamientoRepository;
+
     @Override
     public void run(ApplicationArguments args) throws Exception {
         mascotaRepository.save(new Mascota("sparky", "shih tzu", 3, 4.2, "juguetón", "https://cdn.pixabay.com/photo/2017/09/25/13/14/dog-2785077_1280.jpg", "activo"));
@@ -183,10 +205,71 @@ public class DatabaseInit implements ApplicationRunner{
 
 
 
+        especialidadRepository.save(new Especialidad("Ortopedia"));
+        especialidadRepository.save(new Especialidad("Cirugía"));
+        especialidadRepository.save(new Especialidad("Oftalmología"));
+        especialidadRepository.save(new Especialidad("Dermatologia"));
+        especialidadRepository.save(new Especialidad("Odontología"));
+
+        administradorRepository.save(new Administrador("admin", "admin", "admin"));
+
+        drogaRepository.save(new Droga("Amoxicilina", 20000, 25000, 500, 0));
+        drogaRepository.save(new Droga("Ibuprofeno", 15000, 20000, 500, 0));
+        drogaRepository.save(new Droga("Paracetamol", 10000, 15000, 500, 0));
+        drogaRepository.save(new Droga("Aspirina", 5000, 10000, 500, 0));
+        drogaRepository.save(new Droga("Clonazepam", 5000, 10000, 500, 0));
+
+        veterinarioRepository.save(new Veterinario("v1", "v1", "veterinario", 1, "carlos", "activo"));
+        veterinarioRepository.save(new Veterinario("v2", "v2", "veterinario", 2, "pedro", "activo"));
+        veterinarioRepository.save(new Veterinario("v3", "v3", "veterinario", 3, "maria", "activo"));
+        veterinarioRepository.save(new Veterinario("v4", "v4", "veterinario", 4, "jose", "activo"));
+        veterinarioRepository.save(new Veterinario("v5", "v5", "veterinario", 5, "laura", "activo"));
+
+        tratamientoRepository.save(new Tratamiento(LocalDate.now()));
+        tratamientoRepository.save(new Tratamiento("2022-01-01"));
+        tratamientoRepository.save(new Tratamiento("2022-02-02"));
+
+        
+
         List<Dueno> duenos = duenoRepository.findAll();
         List<Mascota> mascotas = mascotaRepository.findAll();
 
+        List<Droga> drogas = drogaRepository.findAll();
+        List<Tratamiento> tratamientos = tratamientoRepository.findAll();
+        List<Especialidad> especialidades = especialidadRepository.findAll();
+        List<Veterinario> veterinarios = veterinarioRepository.findAll();
+
         Random random = new Random();
+
+        for(Veterinario veterinario : veterinarios){
+            int indexEspecialidad = random.nextInt(especialidades.size());
+            Especialidad especialidad = especialidades.get(indexEspecialidad);
+            
+            veterinario.setEspecialidad(especialidad);
+            veterinarioRepository.save(veterinario);
+
+        
+        }
+
+        
+        for (Tratamiento tratamiento : tratamientos) {
+            int indexDroga = random.nextInt(drogas.size());
+            int indexMascota = random.nextInt(mascotas.size());
+            int indexVeterinario = random.nextInt(veterinarios.size());
+
+            Droga droga = drogas.get(indexDroga);
+            Mascota mascota = mascotas.get(indexMascota);
+            Veterinario veterinario = veterinarios.get(indexVeterinario);
+
+            tratamiento.setDroga(droga);
+            tratamiento.setMascota(mascota);
+            tratamiento.setVeterinario(veterinario);
+
+            tratamientoRepository.save(tratamiento);
+
+        }
+
+        
 
         for (Dueno dueno : duenos) {
             int numMascotasAsignadas = 2; // Establecer el número deseado de mascotas por dueño
@@ -206,6 +289,9 @@ public class DatabaseInit implements ApplicationRunner{
             dueno.setMascotas(mascotasAsignadas);
             duenoRepository.save(dueno); // Guardar el dueño con las mascotas asignadas
         }
+
+
+        
         
         
     

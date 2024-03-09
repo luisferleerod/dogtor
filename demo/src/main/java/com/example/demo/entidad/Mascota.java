@@ -1,9 +1,13 @@
 package com.example.demo.entidad;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 
 
 //POJO (Plain Old Java Object)
@@ -26,6 +30,9 @@ public class Mascota {
     @Id
     @GeneratedValue
     private Long id;
+
+    @OneToMany(mappedBy = "mascota")
+    private List<Tratamiento> tratamientos = new ArrayList<>();
 
     public Mascota(Long id, String nombre, String raza, int edad, Double peso, String enfermedad, String foto, String estado) {
         this.id = id;
@@ -132,4 +139,14 @@ public class Mascota {
         this.dueno = dueno;
     }
 
+    public List<Tratamiento> getTratamientos() {
+        return tratamientos;
+    }
+
+    public void setTratamientos(List<Tratamiento> tratamientos) {
+        this.tratamientos = tratamientos;
+    }
+
+
+    
 }
