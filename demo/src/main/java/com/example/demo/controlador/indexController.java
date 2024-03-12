@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/dogtor")
 public class indexController {
-    
+    // Método para manejar solicitudes GET en la raíz del mapeo "/dogtor"
     @GetMapping
     public String index() {
         return "true";

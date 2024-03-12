@@ -44,7 +44,7 @@ public class DatabaseInit implements ApplicationRunner{
 
     @Autowired
     TratamientoRepository tratamientoRepository;
-
+    //Metodo utilizado para inicializar la base de datos
     @Override
     public void run(ApplicationArguments args) throws Exception {
         mascotaRepository.save(new Mascota("sparky", "shih tzu", 3, 4.2, "juguetón", "https://cdn.pixabay.com/photo/2017/09/25/13/14/dog-2785077_1280.jpg", "activo"));
@@ -230,7 +230,7 @@ public class DatabaseInit implements ApplicationRunner{
         tratamientoRepository.save(new Tratamiento("2022-02-02"));
 
         
-
+        // Obtener todas las entidades necesarias de las respectivas repositorios
         List<Dueno> duenos = duenoRepository.findAll();
         List<Mascota> mascotas = mascotaRepository.findAll();
 
@@ -240,7 +240,7 @@ public class DatabaseInit implements ApplicationRunner{
         List<Veterinario> veterinarios = veterinarioRepository.findAll();
 
         Random random = new Random();
-
+        // Asignar una especialidad aleatoria a cada veterinario
         for(Veterinario veterinario : veterinarios){
             int indexEspecialidad = random.nextInt(especialidades.size());
             Especialidad especialidad = especialidades.get(indexEspecialidad);
@@ -251,7 +251,7 @@ public class DatabaseInit implements ApplicationRunner{
         
         }
 
-        
+        // Asignar tratamientos aleatorios a mascotas con drogas y veterinarios aleatorios
         for (Tratamiento tratamiento : tratamientos) {
             int indexDroga = random.nextInt(drogas.size());
             int indexMascota = random.nextInt(mascotas.size());
@@ -270,7 +270,7 @@ public class DatabaseInit implements ApplicationRunner{
         }
 
         
-
+        // Asignar un número específico de mascotas aleatorias a cada dueño
         for (Dueno dueno : duenos) {
             int numMascotasAsignadas = 2; // Establecer el número deseado de mascotas por dueño
             List<Mascota> mascotasAsignadas = new ArrayList<>();

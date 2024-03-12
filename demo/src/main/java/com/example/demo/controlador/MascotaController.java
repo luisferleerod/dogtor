@@ -28,6 +28,7 @@ public class MascotaController {
     @Autowired
     DuenoService duenoService;
 
+    // Método para mostrar todas las mascotas
     // http://localhost:8090/mascotas/all
     @GetMapping("/all")
     public String Mostrarmascotas(Model model) {
@@ -35,6 +36,7 @@ public class MascotaController {
         return "mostrarTodasMascotas";
     }
 
+    // Método para mostrar información de una mascota específica
     // http://localhost:8090/mascotas/find/1
     @GetMapping("/find/{id}")
     public String MostrarInfoMascota(Model model, @PathVariable("id") Long id) {
@@ -49,7 +51,7 @@ public class MascotaController {
 
     
     
-
+    // Método para mostrar el formulario de creación de una nueva mascota
     // http://localhost:8090/mascotas/add
     @GetMapping("/add")
     public String mostrarFormularioCrear(Model model) {
@@ -60,6 +62,7 @@ public class MascotaController {
         return "nuevoPaciente";
     }
 
+    // Método para agregar una nueva mascota
     @PostMapping("/agregar")
     public String agregarMascota(@ModelAttribute("mascota") Mascota mascota, Model model) {
 
@@ -97,7 +100,8 @@ public class MascotaController {
 
         }
     
-    
+    // Método para eliminar una mascota
+    // http://localhost:8090/mascotas/add
     @GetMapping("/delete/{id}")
     public String borrarMascota(@PathVariable("id") Long id) {
         // Obtener la mascota por ID
@@ -116,13 +120,14 @@ public class MascotaController {
         return "redirect:/mascotas/all";
     }
     
-
+    // Método para mostrar el formulario de actualización de una mascota
+    // http://localhost:8090/mascotas/update/{id}
     @GetMapping("/update/{id}")
     public String mostrarFormularioUpdate(@PathVariable("id") Long id, Model model) {
         model.addAttribute("mascota", mascotaService.findById(id));
         return "actualizarMascota";
     }
-
+    // Método para actualizar la información de una mascota
     @PostMapping("/update/{id}")
     public String actualizarMascota(@ModelAttribute("mascota") Mascota mascota, Model model) {
         
